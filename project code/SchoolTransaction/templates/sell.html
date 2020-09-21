@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sell</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Common Css -->
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="../static/css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h1>
+                    <a href="index1.html">校易网</a>
+                </h1>
+                <span></span>
+            </div>
+            <div class="profile-bg" id="user">
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index1.html">
+                        <i class="fas fa-th-large"></i>
+                        主页
+                    </a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="fas fa-laptop"></i>
+                        功能
+                        <i class="fas fa-angle-down fa-pull-right"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="search.html">搜一搜</a>
+                        </li>
+                        <li>
+                            <a href="sell.html">我要出售</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="cart.html">
+                        <i class="fas fa-chart-pie"></i>
+                        购物车
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                        <i class="fas fa-users"></i>
+                        账户
+                        <i class="fas fa-angle-down fa-pull-right"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li>
+                            <a href="index.html">注销</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+            <nav class="navbar navbar-default mb-xl-5 mb-4">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!--// top-bar -->
+
+            <!-- main-heading -->
+            <h2 class="main-title-w3layouts mb-2 text-center">Sell</h2>
+            <!--// main-heading -->
+
+            <!-- Circle Bar chart -->
+            <div class="outer-w3-agile mt-3" >
+
+                <h4 class="tittle-w3-agileits mb-4">我要出售</h4>
+                <div class="c-bars d-lg-flex justify-content-around" id="container" style="height :500%">
+                    <div class="form-body-w3-agile text-center w-lg-50 w-sm-75 w-100 mx-auto mt-5">
+                <form action="/add/" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>商品名</label>
+                        <input type="text" name="name" class="form-control" placeholder="输入商品名" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>商品价格</label>
+                        <input type="text" name="price" class="form-control" placeholder="输入商品价格" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>商品描述</label>
+                        <input type="text" name="description" class="form-control" placeholder="输入商品描述" required="required">
+                    </div>
+                    <div class="d-sm-flex justify-content-between">
+                    </div>
+                    <button type="submit" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">确定</button>
+                </form>
+                <h1 class="paragraph-agileits-w3layouts mt-2">
+                    <a href="index1.html">返回首页</a>
+                </h1>
+            </div>
+                </div>
+            <!--// Circle Bar chart -->
+
+            <!-- Simple-chart -->
+                </div>
+            <!--// Simple-chart -->
+            <!-- Copyright -->
+            <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
+                <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+            </div>
+            <!--// Copyright -->
+        </div>
+    </div>
+
+    <!-- Required common Js -->
+    <script src='../static/js/jquery-2.2.3.min.js'></script>
+    <!--// percentage-circles Js -->
+
+    <!-- gauge-meter -->
+    <script src="../static/js/raphael-min.js"></script>
+    <script src="../static/js/kuma-gauge.jquery.js"></script>
+
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+
+    <!-- Js for bootstrap working-->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Bars Css -->
+    <link rel="stylesheet" href="../static/css/bar.css">
+    <!--// Bars Css -->
+    <!-- Calender Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/pignose.calender.css" />
+    <!--// Calender Css -->
+    <!-- Common Css -->
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="../static/css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h1>
+                    <a href="manage.html">校易网</a>
+                </h1>
+                <span></span>
+            </div>
+            <div class="profile-bg" id="user">
+                <script type="text/javascript">
+                    document.getElementById('user').innerHTML = '<b>欢迎你,管理员</b>';
+                </script>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="manage.html">
+                        <i class="fas fa-th-large"></i>
+                        主页
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                        <i class="fas fa-users"></i>
+                        账户
+                        <i class="fas fa-angle-down fa-pull-right"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li>
+                            <a href="index.html">注销</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+            <nav class="navbar navbar-default mb-xl-5 mb-4">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!--// top-bar -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!--// Stats -->
+                    <!-- Pie-chart -->
+                    <div class="outer-w3-agile col-xl ml-xl-3 mt-xl-0 mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">用户信息</h4>
+                        <div id="container" style="height: 100%"></div>
+                        <script type="text/javascript">
+                        id={{id|safe}}
+                        uname={{name|safe}}
+                        if(id.length==0){
+                            alert("暂无用户");
+                        }
+                        for (var i = 0; i < id.length; i++) {
+                            var mDiv3 = document.getElementById("container");
+                            var form = document.createElement('form');
+                            form.action = '/deleteUser/';
+                            form.method = 'post';
+                            var input = document.createElement('input');
+                            input.name = 'info';
+                            input.value = id[i]+" "+uname[i];
+                            var b=document.createElement("button");
+                            b.type='submit';
+                            b.style="height:30px;width:80px;";
+                            b.innerHTML = "删除";
+                            form.appendChild(input);
+                            form.appendChild(b);
+                            mDiv3.appendChild(form);
+                        }
+                    </script>
+                    </div>
+                    <!--// Pie-chart -->
+                </div>
+            </div>
+
+
+
+            <!--// Bar-Chart -->
+
+            <!--// three-grids -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Calender -->
+                    <div class="outer-w3-agile col-xl mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">日历</h4>
+                        <div class="multi-select-calender"></div>
+                        <div class="box"></div>
+                    </div>
+                    <!--// Calender -->
+                    <!-- Profile -->
+
+                    <!--// Profile -->
+                    <!-- Browser stats -->
+                    <div class="outer-w3-agile col-xl mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">浏览器推荐</h4>
+                        <div class="stats-info stats-body">
+                            <ul class="list-unstyled">
+                                <li class="pb-3">GoogleChrome
+                                    <span class="float-right">85%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar green" style="width:85%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Firefox
+                                    <span class="float-right">35%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar yellow" style="width:35%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Internet Explorer
+                                    <span class="float-right">78%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar red" style="width:78%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Safari
+                                    <span class="float-right">50%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar blue" style="width:50%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Opera
+                                    <span class="float-right">80%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar light-blue" style="width:80%;"></div>
+                                    </div>
+                                </li>
+                                <li class="last py-md-4 py-3">Others
+                                    <span class="float-right">60%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:60%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--// Browser stats -->
+                </div>
+            </div>
+            <!--// Three-grids -->
+            <!-- Countdown -->
+            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
+                <h4 class="tittle-w3-agileits mb-4 text-white">倒计时</h4>
+                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
+            </div>
+            <!--// Countdown -->
+            <!-- Copyright -->
+            <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
+                <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+            </div>
+            <!--// Copyright -->
+        </div>
+    </div>
+
+
+    <!-- Required common Js -->
+    <script src='../static/js/jquery-2.2.3.min.js'></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="../static/js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+
+
+    <!-- Bar-chart -->
+    <script src="../static/js/rumcaJS.js"></script>
+    <script src="../static/js/example.js"></script>
+    <!--// Bar-chart -->
+    <!-- Calender -->
+    <script src="../static/js/moment.min.js"></script>
+    <script src="../static/js/pignose.calender.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('.calender').pignoseCalender({
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+
+            $('.multi-select-calender').pignoseCalender({
+                multiple: true,
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '~' +
+                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+        });
+        //]]>
+    </script>
+    <!--// Calender -->
+
+    <!-- profile-widget-dropdown js-->
+    <script src="../static/js/script.js"></script>
+    <!--// profile-widget-dropdown js-->
+
+    <!-- Count-down -->
+    <script src="../static/js/simplyCountdown.js"></script>
+    <link href="../static/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+    <script>
+        var d = new Date();
+        simplyCountdown('simply-countdown-custom', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 2,
+            day: 25
+        });
+    </script>
+    <!--// Count-down -->
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+
+    <!-- Js for bootstrap working-->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+</body>
+
+</html>

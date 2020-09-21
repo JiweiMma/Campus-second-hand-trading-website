@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Bars Css -->
+    <link rel="stylesheet" href="../static/css/bar.css">
+    <!--// Bars Css -->
+    <!-- Calender Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/pignose.calender.css" />
+    <!--// Calender Css -->
+    <!-- Common Css -->
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="../static/css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h1>
+                    <a href="index1.html">校易网</a>
+                </h1>
+                <span></span>
+            </div>
+            <div class="profile-bg" id="user">
+                <script type="text/javascript">
+                    var use ={{ user|safe }};
+                    document.getElementById('user').innerHTML = '<b>欢迎你,'+use[0]+'</b>';
+                </script>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="index1.html">
+                        <i class="fas fa-th-large"></i>
+                        主页
+                    </a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="fas fa-laptop"></i>
+                        功能
+                        <i class="fas fa-angle-down fa-pull-right"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="search1.html">搜一搜</a>
+                        </li>
+                        <li>
+                            <a href="sell.html">我要出售</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <i class="fas fa-chart-pie"></i>
+                        购物车
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                        <i class="fas fa-users"></i>
+                        账户
+                        <i class="fas fa-angle-down fa-pull-right"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li>
+                            <a href="index.html">注销</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+            <nav class="navbar navbar-default mb-xl-5 mb-4">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!--// top-bar -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!--// Stats -->
+                    <!-- Pie-chart -->
+                    <div class="outer-w3-agile col-xl ml-xl-3 mt-xl-0 mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">商品列表</h4>
+                        <div id="container" style="height: 100%"></div>
+                        <script type="text/javascript">
+                        des={{des|safe}}
+                        state={{state|safe}}
+                        price={{price|safe}}
+                        if(des.length==0){
+                            alert("暂无商品");
+                        }
+                        for (var i = 0; i < des.length; i++) {
+                            var mDiv3 = document.getElementById("container");
+                            var form = document.createElement('form');
+                            form.action = '/delete/';
+                            form.method = 'post';
+                            var input = document.createElement('input');
+                            input.name = 'info';
+                            input.value = state[i]+" "+price[i]+" "+des[i];
+                            var b=document.createElement("button");
+                            b.type='submit';
+                            b.style="height:30px;width:80px;";
+                            b.innerHTML = "删除";
+                            form.appendChild(input);
+                            form.appendChild(b);
+                            mDiv3.appendChild(form);
+                        }
+                    </script>
+                    </div>
+                    <!--// Pie-chart -->
+                </div>
+            </div>
+
+
+
+            <!--// Bar-Chart -->
+
+            <!--// three-grids -->
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Calender -->
+                    <div class="outer-w3-agile col-xl mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">日历</h4>
+                        <div class="multi-select-calender"></div>
+                        <div class="box"></div>
+                    </div>
+                    <!--// Calender -->
+                    <!-- Profile -->
+
+                    <!--// Profile -->
+                    <!-- Browser stats -->
+                    <div class="outer-w3-agile col-xl mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">浏览器推荐</h4>
+                        <div class="stats-info stats-body">
+                            <ul class="list-unstyled">
+                                <li class="pb-3">GoogleChrome
+                                    <span class="float-right">85%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar green" style="width:85%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Firefox
+                                    <span class="float-right">35%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar yellow" style="width:35%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Internet Explorer
+                                    <span class="float-right">78%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar red" style="width:78%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Safari
+                                    <span class="float-right">50%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar blue" style="width:50%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Opera
+                                    <span class="float-right">80%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar light-blue" style="width:80%;"></div>
+                                    </div>
+                                </li>
+                                <li class="last py-md-4 py-3">Others
+                                    <span class="float-right">60%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:60%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--// Browser stats -->
+                </div>
+            </div>
+            <!--// Three-grids -->
+            <!-- Countdown -->
+            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
+                <h4 class="tittle-w3-agileits mb-4 text-white">倒计时</h4>
+                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
+            </div>
+            <!--// Countdown -->
+            <!-- Copyright -->
+            <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center">
+                <p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+            </div>
+            <!--// Copyright -->
+        </div>
+    </div>
+
+
+    <!-- Required common Js -->
+    <script src='../static/js/jquery-2.2.3.min.js'></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="../static/js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+
+    <!-- Graph -->
+    <script src="../static/js/SimpleChart.js"></script>
+    <script>
+        var graphdata4 = {
+            linecolor: "Random",
+            title: "Thursday",
+            values: [{
+                    X: "6",
+                    Y: 300.00
+                },
+                {
+                    X: "7",
+                    Y: 101.98
+                },
+                {
+                    X: "8",
+                    Y: 140.00
+                },
+                {
+                    X: "9",
+                    Y: 340.00
+                },
+                {
+                    X: "10",
+                    Y: 470.25
+                },
+                {
+                    X: "11",
+                    Y: 180.56
+                },
+                {
+                    X: "12",
+                    Y: 680.57
+                },
+                {
+                    X: "13",
+                    Y: 740.00
+                },
+                {
+                    X: "14",
+                    Y: 800.89
+                },
+                {
+                    X: "15",
+                    Y: 420.57
+                },
+                {
+                    X: "16",
+                    Y: 980.24
+                },
+                {
+                    X: "17",
+                    Y: 1080.00
+                },
+                {
+                    X: "18",
+                    Y: 140.24
+                },
+                {
+                    X: "19",
+                    Y: 140.58
+                },
+                {
+                    X: "20",
+                    Y: 110.54
+                },
+                {
+                    X: "21",
+                    Y: 480.00
+                },
+                {
+                    X: "22",
+                    Y: 580.00
+                },
+                {
+                    X: "23",
+                    Y: 340.89
+                },
+                {
+                    X: "0",
+                    Y: 100.26
+                },
+                {
+                    X: "1",
+                    Y: 1480.89
+                },
+                {
+                    X: "2",
+                    Y: 1380.87
+                },
+                {
+                    X: "3",
+                    Y: 1640.00
+                },
+                {
+                    X: "4",
+                    Y: 1700.00
+                }
+            ]
+        };
+        $(function () {
+            $("#Hybridgraph").SimpleChart({
+                ChartType: "Hybrid",
+                toolwidth: "50",
+                toolheight: "25",
+                axiscolor: "#E6E6E6",
+                textcolor: "#6E6E6E",
+                showlegends: false,
+                data: [graphdata4],
+                legendsize: "140",
+                legendposition: 'bottom',
+                xaxislabel: 'Hours',
+                title: 'Weekly Profit',
+                yaxislabel: 'Profit in $'
+            });
+        });
+    </script>
+    <!--// Graph -->
+    <!-- Bar-chart -->
+    <script src="../static/js/rumcaJS.js"></script>
+    <script src="../static/js/example.js"></script>
+    <!--// Bar-chart -->
+    <!-- Calender -->
+    <script src="../static/js/moment.min.js"></script>
+    <script src="../static/js/pignose.calender.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('.calender').pignoseCalender({
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+
+            $('.multi-select-calender').pignoseCalender({
+                multiple: true,
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '~' +
+                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+        });
+        //]]>
+    </script>
+    <!--// Calender -->
+
+    <!-- profile-widget-dropdown js-->
+    <script src="../static/js/script.js"></script>
+    <!--// profile-widget-dropdown js-->
+
+    <!-- Count-down -->
+    <script src="../static/js/simplyCountdown.js"></script>
+    <link href="../static/css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+    <script>
+        var d = new Date();
+        simplyCountdown('simply-countdown-custom', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 2,
+            day: 25
+        });
+    </script>
+    <!--// Count-down -->
+
+    <!-- pie-chart -->
+    <script src='../static/js/amcharts.js'></script>
+    <script>
+        var chart;
+        var legend;
+
+        var chartData = [{
+                country: "Lithuania",
+                value: 260
+            },
+            {
+                country: "Ireland",
+                value: 201
+            },
+            {
+                country: "Germany",
+                value: 65
+            },
+            {
+                country: "Australia",
+                value: 39
+            },
+            {
+                country: "UK",
+                value: 19
+            },
+            {
+                country: "Latvia",
+                value: 10
+            }
+        ];
+
+        AmCharts.ready(function () {
+            // PIE CHART
+            chart = new AmCharts.AmPieChart();
+            chart.dataProvider = chartData;
+            chart.titleField = "country";
+            chart.valueField = "value";
+            chart.outlineColor = "";
+            chart.outlineAlpha = 0.8;
+            chart.outlineThickness = 2;
+            // this makes the chart 3D
+            chart.depth3D = 20;
+            chart.angle = 30;
+
+            // WRITE
+            chart.write("chartdiv");
+        });
+    </script>
+    <!--// pie-chart -->
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("Hybridgraph1");
+var myChart = echarts.init(dom);
+var list_a ={{ Name|safe }};
+        var list_b ={{ Score|safe }};
+        var dataAxis = [];
+        var data = [];
+        for (var i = 0; i < list_a.length; i++) {
+            dataAxis.push(list_a[i]);
+            data.push(list_b[i]);
+        }
+var app = {};
+option = null;
+var yMax = 15;
+var dataShadow = [];
+
+for (var i = 0; i < data.length; i++) {
+    dataShadow.push(yMax);
+}
+
+option = {
+    title: {
+        text: '小说评分展示',
+        subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
+    },
+    xAxis: {
+        data: dataAxis,
+        axisLabel: {
+            inside: true,
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            show: false
+        },
+        z: 10
+    },
+    yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#999'
+            }
+        }
+    },
+    dataZoom: [
+        {
+            type: 'inside'
+        }
+    ],
+    series: [
+        { // For shadow
+            type: 'bar',
+            itemStyle: {
+                normal: {color: 'rgba(0,0,0,0.05)'}
+            },
+            barGap:'-100%',
+            barCategoryGap:'40%',
+            data: dataShadow,
+            animation: false
+        },
+        {
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#83bff6'},
+                            {offset: 0.5, color: '#188df0'},
+                            {offset: 1, color: '#188df0'}
+                        ]
+                    )
+                },
+                emphasis: {
+                    color: new echarts.graphic.LinearGradient(
+                        0, 0, 0, 1,
+                        [
+                            {offset: 0, color: '#2378f7'},
+                            {offset: 0.7, color: '#2378f7'},
+                            {offset: 1, color: '#83bff6'}
+                        ]
+                    )
+                }
+            },
+            data: data
+        }
+    ]
+};
+
+// Enable data zoom when user click bar.
+var zoomSize = 6;
+myChart.on('click', function (params) {
+    console.log(dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)]);
+    myChart.dispatchAction({
+        type: 'dataZoom',
+        startValue: dataAxis[Math.max(params.dataIndex - zoomSize / 2, 0)],
+        endValue: dataAxis[Math.min(params.dataIndex + zoomSize / 2, data.length - 1)]
+    });
+});;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+    <!-- //dropdown nav -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+       var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var list_a ={{ Name|safe }};
+        var list_b ={{ Read|safe }};
+        var name_list=[];
+        var read_list=[];
+        for (var i = 0; i < list_a.length/2; i++) {
+            name_list.push(list_a[i]);
+            read_list.push(list_b[i]);
+        }
+        var app = {};
+option = null;
+option = {
+    xAxis: {
+        type: 'category',
+        data: name_list
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: read_list,
+        type: 'bar'
+    }]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+    </script>
+    <!-- Js for bootstrap working-->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+</body>
+
+</html>
